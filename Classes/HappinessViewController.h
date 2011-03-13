@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FaceView.h"
 
-@interface HappinessViewController : UIViewController <FaceViewDelegate> {
+@interface HappinessViewController : UIViewController <FaceViewDelegate, UISplitViewControllerDelegate> {
 	int happiness; // 0 .. 100
 	UISlider *slider;
 	FaceView *faceView;

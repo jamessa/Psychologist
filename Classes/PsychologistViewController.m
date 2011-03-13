@@ -20,7 +20,9 @@
 - (void)showDiagnosis:(int)diagnosis {
 	self.happinessViewController.happiness = diagnosis;
     self.happinessViewController.title = [NSString stringWithFormat:@"diagnosis = %d",diagnosis];
-	[self.navigationController pushViewController:self.happinessViewController animated:YES];
+    if (self.happinessViewController.view.window == nil) {
+        [self.navigationController pushViewController:self.happinessViewController animated:YES];
+    }
 }
 
 - (IBAction)sad {
@@ -42,5 +44,9 @@
 - (void) dealloc {
     [happinessViewController release];
     [super dealloc];
+}
+
+- (void)viewDidLoad {
+    self.title = @"Psychologist";
 }
 @end
