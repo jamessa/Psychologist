@@ -30,6 +30,25 @@
     [self setup];
 }
 
++ (BOOL)scaleIsValid:(CGFloat)aScale{
+    return ((aScale > 0) && (aScale <= 1));
+}
+
+#define DEFAULT_SCALE 0.90
+
+- (CGFloat)scale {
+    return [FaceView scaleIsValid:scale] ? scale : DEFAULT_SCALE;
+}
+
+- (void)setScale:(CGFloat)newScale {
+    if ([FaceView scaleIsValid:newScale]) {
+        if(newScale != scale){
+            scale = newScale;
+            [self setNeedsDisplay];
+        }
+    }
+}
+
 - (void)drawCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context
 {
 	UIGraphicsPushContext(context);
@@ -49,7 +68,7 @@
 		size = self.bounds.size.height /2;
 	}
 	
-	size *= 0.90;
+	size *= self.scale;
 	
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	

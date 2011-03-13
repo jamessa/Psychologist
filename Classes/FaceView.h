@@ -17,6 +17,7 @@
 @end
 
 @interface FaceView : UIView {
+    CGFloat scale;
 	id <FaceViewDelegate> delegate;
 }
 
