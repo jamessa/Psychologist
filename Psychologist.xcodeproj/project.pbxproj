@@ -18,6 +18,7 @@
 		4BA0C3B71323C2FB00E61096 /* FaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA0C3B61323C2FB00E61096 /* FaceView.m */; };
 		4BA0C3C11323C34B00E61096 /* PsychologistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA0C3BF1323C34B00E61096 /* PsychologistViewController.m */; };
 		4BA0C3C21323C34B00E61096 /* PsychologistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BA0C3C01323C34B00E61096 /* PsychologistViewController.xib */; };
+		4BC55690132CB6D300720C32 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5568F132CB6D300720C32 /* MainWindow-iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		4BA0C3BE1323C34B00E61096 /* PsychologistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PsychologistViewController.h; sourceTree = "<group>"; };
 		4BA0C3BF1323C34B00E61096 /* PsychologistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PsychologistViewController.m; sourceTree = "<group>"; };
 		4BA0C3C01323C34B00E61096 /* PsychologistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PsychologistViewController.xib; path = Classes/PsychologistViewController.xib; sourceTree = "<group>"; };
+		4BC5568F132CB6D300720C32 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Psychologist-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Psychologist-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				4BC5568E132CB6C100720C32 /* iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -118,6 +121,14 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BC5568E132CB6C100720C32 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				4BC5568F132CB6D300720C32 /* MainWindow-iPad.xib */,
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				4BA0C3B41323C2EE00E61096 /* HappinessViewController.xib in Resources */,
 				4BA0C3C21323C34B00E61096 /* PsychologistViewController.xib in Resources */,
+				4BC55690132CB6D300720C32 /* MainWindow-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +215,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Psychologist_Prefix.pch;
 				INFOPLIST_FILE = "Psychologist-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = Psychologist;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -215,7 +229,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Psychologist_Prefix.pch;
 				INFOPLIST_FILE = "Psychologist-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = Psychologist;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
