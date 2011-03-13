@@ -31,4 +31,7 @@
 	[self showDiagnosis:50];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return YES;
+}
 @end
