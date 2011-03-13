@@ -49,6 +49,14 @@
     }
 }
 
+-(void)pinch:(UIPinchGestureRecognizer *)gesture {
+    if ((gesture.state == UIGestureRecognizerStateChanged) ||
+        (gesture.state == UIGestureRecognizerStateEnded) ){
+        self.scale *= gesture.scale;
+        gesture.scale = 1;    
+    }
+}
+
 - (void)drawCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context
 {
 	UIGraphicsPushContext(context);

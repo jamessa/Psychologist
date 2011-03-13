@@ -45,6 +45,9 @@
 {
 	[super viewDidLoad];
 	self.faceView.delegate = self;
+    UIPinchGestureRecognizer *pinchgr = [[UIPinchGestureRecognizer alloc] initWithTarget:self.faceView action:@selector(pinch:)];
+    [self.faceView addGestureRecognizer:pinchgr];
+    [pinchgr release];
 	[self updateUI];
 }
 
