@@ -13,13 +13,21 @@
 
 @synthesize delegate;
 
+- (void) setup {
+    self.contentMode = UIViewContentModeRedraw;
+}
+
 - (id)initWithFrame:(CGRect)frame {
     
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code.
+        [self setup];
     }
     return self;
+}
+
+- (void)awakeFromNib {
+    [self setup];
 }
 
 - (void)drawCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context
