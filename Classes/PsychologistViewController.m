@@ -12,11 +12,15 @@
 
 @implementation PsychologistViewController
 
+- (HappinessViewController *) happinessViewController{
+    if(!happinessViewController) happinessViewController = [[HappinessViewController alloc] init];
+    return happinessViewController;
+}
+
 - (void)showDiagnosis:(int)diagnosis {
-	HappinessViewController *hvc = [[HappinessViewController alloc] init];
-	hvc.happiness = diagnosis;
-	[self.navigationController pushViewController:hvc animated:YES];
-	[hvc release];
+	self.happinessViewController.happiness = diagnosis;
+    self.happinessViewController.title = [NSString stringWithFormat:@"diagnosis = %d",diagnosis];
+	[self.navigationController pushViewController:self.happinessViewController animated:YES];
 }
 
 - (IBAction)sad {
@@ -32,6 +36,11 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    return YES;
+   return YES;
+}
+
+- (void) dealloc {
+    [happinessViewController release];
+    [super dealloc];
 }
 @end
