@@ -17,15 +17,31 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
+- (BOOL)iPad {
+    return ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad );
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
     UINavigationController *navcon = [[UINavigationController alloc] init];
 	PsychologistViewController *pvc = [[PsychologistViewController alloc] init];
 	[navcon pushViewController:pvc animated:NO];
+    
+    if (self.iPad) {
+        UISplitViewController *svc = [[UISplitViewController alloc] init];
+        UINavigationController *rightNav = [[UINavigationController alloc] init];
+        [rightNav pushViewController:pvc.happinessViewController animated:NO];
+        svc.delegate = pvc.happinessViewController;
+        svc.viewControllers = [NSArray arrayWithObjects:navcon, rightNav, nil];
+        [navcon release]; [rightNav release];
+        [window addSubview:svc.view];
+    } else {
+        [window addSubview:navcon.view];
+    }
+    
 	[pvc release];
-	[window addSubview:navcon.view];
-    [self.window makeKeyAndVisible];
+	[self.window makeKeyAndVisible];
     
     return YES;
 }

@@ -11,7 +11,7 @@
 @interface PsychologistAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
 }
-
+@property (readonly) BOOL iPad;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
 @end
